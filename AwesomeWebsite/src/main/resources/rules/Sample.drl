@@ -1,15 +1,15 @@
-package com.sample
-import javax.swing.JOptionPane
-import javax.swing.JFrame
-import org.kie.api.runtime.KieRuntime
-import javax.swing.JRadioButton
-import javax.swing.JPanel
+package com.sample;
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
+import org.kie.api.runtime.KieRuntime;
+import javax.swing.JRadioButton;
+import javax.swing.JPanel;
 import java.awt.FlowLayout;
 global JFrame frame;
-import java.util.ArrayList
-import java.util.List
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Arrays;
-import java.util.ArrayList
+import java.util.ArrayList;
 import javax.swing.JLabel;
 import java.awt.*;
 import java.awt.event.*;
@@ -51,11 +51,11 @@ then
 	}
 end
 
-rule "LETS START"
+rule "LET'S START"
           when
           then
             ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "OK" }));
-            insert (new Question("LETS START",variants));
+            insert (new Question("LET'S START",variants));
       end
 
 
@@ -107,25 +107,25 @@ rule "ARE ANY OF THEM WEB DEVELOPERS? - YES. - YOU'RE A CONNECTOR! Time to find 
 end
 
 
-rule "ARE ANY OF THEM WEB DEVELOPERS? - NOPE. - ARE 40 FRIEDNS FOLLOWING YOUR TUMBLR?"
+rule "ARE ANY OF THEM WEB DEVELOPERS? - NOPE. - ARE 40 FRIENDS FOLLOWING YOUR TUMBLR?"
     when
           Answer(question.getText() == "ARE ANY OF THEM WEB DEVELOPERS?" ,text == "NOPE.")
     then
           ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "YES",  "STILL NO." }));
-          insert (new Question("ARE 40 FRIEDNS FOLLOWING YOUR TUMBLR?",variants));
+          insert (new Question("ARE 40 FRIENDS FOLLOWING YOUR TUMBLR?",variants));
 end
 
-rule "ARE 40 FRIEDNS FOLLOWING YOUR TUMBLR? - YES - YOU'RE A CONNECTOR! Time to find the right team"
+rule "ARE 40 FRIENDS FOLLOWING YOUR TUMBLR? - YES - YOU'RE A CONNECTOR! Time to find the right team"
     when
-          Answer(question.getText() == "ARE 40 FRIEDNS FOLLOWING YOUR TUMBLR?" ,text == "YES")
+          Answer(question.getText() == "ARE 40 FRIENDS FOLLOWING YOUR TUMBLR?" ,text == "YES")
     then
           insert(new Result("YOU'RE A CONNECTOR! Time to find the right team"));
 end
 
 
-rule "ARE 40 FRIEDNS FOLLOWING YOUR TUMBLR? - STILL NO. - WE'LL BE YOUR FRIEND"
+rule "ARE 40 FRIENDS FOLLOWING YOUR TUMBLR? - STILL NO. - WE'LL BE YOUR FRIEND"
     when
-          Answer(question.getText() == "ARE 40 FRIEDNS FOLLOWING YOUR TUMBLR?" ,text == "STILL NO.")
+          Answer(question.getText() == "ARE 40 FRIENDS FOLLOWING YOUR TUMBLR?" ,text == "STILL NO.")
     then
           insert(new Result("WE'LL BE YOUR FRIEND"));
 end
@@ -164,59 +164,59 @@ rule "ARE YOU WILLING TO LEARN? - YEAH TOTALLY - SO WHAT'S YOUR PLAN?"
           insert (new Question("SO WHAT'S YOUR PLAN?",variants));
 end
 
-rule "SO WHAT'S YOUR PLAN? - GONNA FAKE IT TILL I MAKE IT! - ARE YOU EXTREMLY LUCKY?"
+rule "SO WHAT'S YOUR PLAN? - GONNA FAKE IT TILL I MAKE IT! - ARE YOU EXTREMELY LUCKY?"
     when
           Answer(question.getText() == "SO WHAT'S YOUR PLAN?" ,text == "GONNA FAKE IT TILL I MAKE IT!")
     then
           ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "NOPE.",  "YES." }));
-          insert (new Question("ARE YOU EXTREMLY LUCKY?",variants));
+          insert (new Question("ARE YOU EXTREMELY LUCKY?",variants));
 end
 
-rule "ARE YOU EXTREMLY LUCKY? - NOPE. - ARE YOU EXTREAMLY WEALTHY?"
+rule "ARE YOU EXTREMELY LUCKY? - NOPE. - ARE YOU EXTREMELY WEALTHY?"
     when
-          Answer(question.getText() == "ARE YOU EXTREMLY LUCKY?" ,text == "NOPE.")
+          Answer(question.getText() == "ARE YOU EXTREMELY LUCKY?" ,text == "NOPE.")
     then
           ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "YES.",  "NOPE." }));
-          insert (new Question("ARE YOU EXTREAMLY WEALTHY?",variants));
+          insert (new Question("ARE YOU EXTREMELY WEALTHY?",variants));
 end
 
-rule "ARE YOU EXTREAMLY WEALTHY? - YES. - YOURE' GONNA BE HUGE  Time to hire some people."
+rule "ARE YOU EXTREMELY WEALTHY? - YES. - YOU'RE GONNA BE HUGE  Time to hire some people."
     when
-          Answer(question.getText() == "ARE YOU EXTREAMLY WEALTHY?" ,text == "YES.")
+          Answer(question.getText() == "ARE YOU EXTREMELY WEALTHY?" ,text == "YES.")
     then
-          insert(new Result("YOURE' GONNA BE HUGE  Time to hire some people."));
+          insert(new Result("YOU'RE GONNA BE HUGE  Time to hire some people."));
 end
 
 
-rule "ARE YOU EXTREAMLY WEALTHY? - NOPE. - ARE YOU EXTREAMLY GOOD-LOOKING?"
+rule "ARE YOU EXTREMELY WEALTHY? - NOPE. - ARE YOU EXTREMELY GOOD-LOOKING?"
     when
-          Answer(question.getText() == "ARE YOU EXTREAMLY WEALTHY?" ,text == "NOPE.")
+          Answer(question.getText() == "ARE YOU EXTREMELY WEALTHY?" ,text == "NOPE.")
     then
           ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "YES.",  "NOPE." }));
-          insert (new Question("ARE YOU EXTREAMLY GOODLOOKING?",variants));
+          insert (new Question("ARE YOU EXTREMELY GOOD-LOOKING?",variants));
 end
 
-rule "ARE YOU EXTREAMLY GOOD+LOOKING? - YES. - YOURE' GONNA BE HUGE  Time to hire some people."
+rule "ARE YOU EXTREMELY GOOD-LOOKING? - YES. - YOU'RE GONNA BE HUGE  Time to hire some people."
     when
-          Answer(question.getText() == "ARE YOU EXTREAMLY GOOD-LOOKING?" ,text == "YES.")
+          Answer(question.getText() == "ARE YOU EXTREMELY GOOD-LOOKING?" ,text == "YES.")
     then
-          insert(new Result("YOURE' GONNA BE HUGE  Time to hire some people."));
+          insert(new Result("YOU'RE GONNA BE HUGE  Time to hire some people."));
 end
 
 
-rule "ARE YOU EXTREAMLY GOOD+LOOKING? - NOPE. - LET ME GET YOU THE NUMBER FOR MY PLASTIC SURGEON."
+rule "ARE YOU EXTREMELY GOOD-LOOKING? - NOPE. - LET ME GET YOU THE NUMBER FOR MY PLASTIC SURGEON."
     when
-          Answer(question.getText() == "ARE YOU EXTREAMLY GOOD+LOOKING?" ,text == "NOPE.")
+          Answer(question.getText() == "ARE YOU EXTREMELY GOOD-LOOKING?" ,text == "NOPE.")
     then
           insert(new Result("LET ME GET YOU THE NUMBER FOR MY PLASTIC SURGEON."));
 end
 
 
-rule "ARE YOU EXTREMLY LUCKY? - YES. - YOURE' GONNA BE HUGE  Time to hire some people."
+rule "ARE YOU EXTREMELY LUCKY? - YES. - YOU'RE GONNA BE HUGE  Time to hire some people."
     when
-          Answer(question.getText() == "ARE YOU EXTREMLY LUCKY?" ,text == "YES.")
+          Answer(question.getText() == "ARE YOU EXTREMELY LUCKY?" ,text == "YES.")
     then
-          insert(new Result("YOURE' GONNA BE HUGE  Time to hire some people."));
+          insert(new Result("YOU'RE GONNA BE HUGE  Time to hire some people."));
 end
 
 
@@ -234,7 +234,7 @@ rule "DO YOU HAVE $80K TO BLOW ON GRAD SCHOOL? - NOT QUITE - DO YOU HAVE $30K TO
     when
           Answer(question.getText() == "DO YOU HAVE $80K TO BLOW ON GRAD SCHOOL?" ,text == "NOT QUITE")
     then
-          ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "YEAH TOTTALY CHA-CHING!",  "STILL NO." }));
+          ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "YEAH TOTALLY CHA-CHING!",  "STILL NO." }));
           insert (new Question("DO YOU HAVE $30K TO BLOW ON COMMUNITY COLLEGE?",variants));
 end
 
@@ -242,7 +242,7 @@ rule "DO YOU HAVE $30K TO BLOW ON COMMUNITY COLLEGE? - STILL NO. - DO YOU HAVE $
     when
           Answer(question.getText() == "DO YOU HAVE $30K TO BLOW ON COMMUNITY COLLEGE?" ,text == "STILL NO.")
     then
-          ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "THAT I CAN HANLDE!",  "I LIVE WITH MOM." }));
+          ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "THAT I CAN HANDLE!",  "I LIVE WITH MOM." }));
           insert (new Question("DO YOU HAVE $8K TO BLOW ON A COUNTING ED CERTIFICATE?",variants));
 end
 
@@ -273,14 +273,6 @@ rule "Choose - LEARN WEB DEVELOPMENT. - LEARN WEB DEVELOPMENT."
           insert (new Question("LEARN WEB DEVELOPMENT.",variants));
 end
 
-rule "LEARN WEB DEVELOPMENT. - I KNOW ASP.NET. - WHOA OLD SCHOOL SOUNDS LIKE IT'S TIME TO UPDATE."
-    when
-          Answer(question.getText() == "LEARN WEB DEVELOPMENT." ,text == "I KNOW ASP.NET.")
-    then
-          insert(new Result("WHOA OLD SCHOOL SOUNDS LIKE IT'S TIME TO UPDATE."));
-end
-
-
 rule "Choose - LEARN WEB DESIGN. - LEARN WEB DESIGN."
     when
           Answer(question.getText() == "Choose" ,text == "LEARN WEB DESIGN.")
@@ -292,9 +284,9 @@ end
 
 rule "hold"
     when
-        Result(text == "SWEET! YOUR'RE READY TO BUILD A SITE!")
+        Result(text == "SWEET! YOU'RE READY TO BUILD A SITE!")
     then
-        insert(new Result("HOLD IT. JUST CUZ YA GOT THE SKILLS , DOESN'T MEAN YA GOT THE CHOPS."));
+        insert(new Result("HOLD IT. JUST CUZ YA GOT THE SKILLS, DOESN'T MEAN YA GOT THE CHOPS."));
 end
 
 rule "Choose - LEARN SOCIAL STRATEGY. - LEARN SOCIAL STRATEGY."
@@ -310,54 +302,48 @@ rule "DO YOU HAVE ANY WEB RELATED SKILLS? - YEAH TOTALLY. - WHAT YOU CAN DO ?"
     when
           Answer(question.getText() == "DO YOU HAVE ANY WEB RELATED SKILLS?" ,text == "YEAH TOTALLY.")
     then
-          ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "I CAN CODE!",  "I CAN DESIGN!",  "I'M SOCAIL GENIUS!" }));
+          ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "I CAN CODE!",  "I CAN DESIGN!",  "I'M A SOCIAL GENIUS!" }));
           insert (new Question("WHAT YOU CAN DO ?",variants));
 end
 
 
-rule "SWEET! YOUR'E READY TO BUILD A SITE! - HOLD IT. JUST CUZ YA GOT THE SKILLS , DOESN'T MEAN YA GOT THE CHOPS. - WHAT YOUR IDEA OF GOOD CODE?"
+rule "SWEET! YOU'RE READY TO BUILD A SITE! - HOLD IT. JUST CUZ YA GOT THE SKILLS, DOESN'T MEAN YA GOT THE CHOPS. - WHAT YOUR IDEA OF GOOD CODE?"
     when
-          Result(text == "HOLD IT. JUST CUZ YA GOT THE SKILLS , DOESN'T MEAN YA GOT THE CHOPS.")
+          Result(text == "HOLD IT. JUST CUZ YA GOT THE SKILLS, DOESN'T MEAN YA GOT THE CHOPS.")
     then
-          ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "LOTS AND LOTS OF NESTED TABLES",  "COPY AND PASTE FROM STACKOVERFLOW",  "NAMING VARIABLES AFTER MY PETS", "SCALABLE WELL - COMMENTED. SEEMLESSLY INTEGRATED"}));
+          ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "LOTS AND LOTS OF NESTED TABLES",  "COPY AND PASTE FROM STACKOVERFLOW",  "NAMING VARIABLES AFTER MY PETS", "SCALABLE WELL - COMMENTED. SEAMLESSLY INTEGRATED"}));
           insert (new Question("WHAT YOUR IDEA OF GOOD CODE?",variants));
 end
 
-rule "SWEET! YOUR'E READY TO BUILD A SITE! -  - WHAT YOUR IDEA OF GOOD CODE?"
+rule "WHAT YOUR IDEA OF GOOD CODE? - SCALABLE WELL - COMMENTED. SEAMLESSLY INTEGRATED"
     when
-          Result(text == "SWEET! YOUR'E READY TO BUILD A SITE!")
+          Answer(question.getText() == "WHAT YOUR IDEA OF GOOD CODE?" ,text == "SCALABLE WELL - COMMENTED. SEAMLESSLY INTEGRATED")
     then
-          insert (new Result("HOLD IT. JUST CUZ YA GOT THE SKILLS , DOESN'T MEAN YA GOT THE CHOPS."));
-end
-rule "WHAT YOUR IDEA OF GOOD CODE? - SCALABLE WELL - COMMENTED. SEEMLESSLY INTEGRATED"
-    when
-          Answer(question.getText() == "WHAT YOUR IDEA OF GOOD CODE?" ,text == "SCALABLE WELL - COMMENTED. SEEMLESSLY INTEGRATED")
-    then
-          ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "THE MORE FONTS THE MERRIER",  "I DREAM OF GEOCITIES.",  "STARBURTS AND DROP SHADOWS",  "ROUNDED CORNERS AND PLENTY OF GLOSS",  "CLEAR HIERARCHY BEAUTIFUL INTERACTIONS THROUGH STYLING" }));
-          insert (new Question("GREAT. WHAT'S YOURE IDEA OF GOOD DESIGN?",variants));
+          ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "THE MORE FONTS THE MERRIER",  "I DREAM OF GEOCITIES.",  "STARBURSTS AND DROP SHADOWS",  "ROUNDED CORNERS AND PLENTY OF GLOSS",  "CLEAR HIERARCHY BEAUTIFUL INTERACTIONS THROUGH STYLING" }));
+          insert (new Question("GREAT. WHAT'S YOUR IDEA OF GOOD DESIGN?",variants));
 end
 
-rule "COMMENTED. SEEMLESSLY INTEGRATED - CLEAR HIERARCHY BEAUTIFUL INTERACTIONS THROUGH STYLING - GREAT. WHATS'S YOUR IDEA OF GOOD SOCAIL MEDIA STRATEGY?"
+rule "COMMENTED. SEAMLESSLY INTEGRATED - CLEAR HIERARCHY BEAUTIFUL INTERACTIONS THROUGH STYLING - GREAT. WHAT'S YOUR IDEA OF GOOD SOCIAL MEDIA STRATEGY?"
     when
-          Answer(question.getText() == "GREAT. WHAT'S YOURE IDEA OF GOOD DESIGN?" ,text == "CLEAR HIERARCHY BEAUTIFUL INTERACTIONS THROUGH STYLING")
+          Answer(question.getText() == "GREAT. WHAT'S YOUR IDEA OF GOOD DESIGN?" ,text == "CLEAR HIERARCHY BEAUTIFUL INTERACTIONS THROUGH STYLING")
     then
           ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "FINDING AND SEEDING BRAND CONTENT IN APPROPRIATE CHANNELS",  "BUILDING ENGAGING CONVERSATION AROUND YOUR LAUNCH",  "JUST FILL EVERY PAGE WITH SHARE BUTTONS",  "SPAMING FOLLOWERS WITH SPONSORED LINKS",  "MAKING LOTS OF TWITTER ACCOUNTS TO RETWEET MYSELF" }));
-          insert (new Question("GREAT. WHATS'S YOUR IDEA OF GOOD SOCAIL MEDIA STRATEGY?",variants));
+          insert (new Question("GREAT. WHAT'S YOUR IDEA OF GOOD SOCIAL MEDIA STRATEGY?",variants));
 end
 
-rule ".SEE YOU A COPLE YEARS! Hopefull the Internet still exists"
+rule ".SEE YOU A COUPLE YEARS! Hopefully the Internet still exists"
           when
           (or
             
     Answer( text == "YOU KNOW IT");
-    Answer( text == "YEAH TOTTALY CHA-CHING!");
-    Answer( text == "THAT I CAN HANLDE!");
+    Answer( text == "YEAH TOTALLY CHA-CHING!");
+    Answer( text == "THAT I CAN HANDLE!");
             )
           then
-    insert(new Result("SEE YOU A COPLE YEARS! Hopefull the Internet still exists"));
+    insert(new Result("SEE YOU A COUPLE YEARS! Hopefully the Internet still exists"));
       end
 
-rule ".WELL, THE WEB ISN'T FOR EVERYONE. Youd make a great bartender."
+rule ".WELL, THE WEB ISN'T FOR EVERYONE. You'd make a great bartender."
           when
           (or
             
@@ -365,7 +351,7 @@ rule ".WELL, THE WEB ISN'T FOR EVERYONE. Youd make a great bartender."
     Answer( text == "I MAJORED IN ART HISTORY...");
             )
           then
-    insert(new Result("WELL, THE WEB ISN'T FOR EVERYONE. Youd make a great bartender."));
+    insert(new Result("WELL, THE WEB ISN'T FOR EVERYONE. You'd make a great bartender."));
       end
 
 rule ".WHOA OLD SCHOOL SOUNDS LIKE IT'S TIME TO UPDATE."
@@ -388,9 +374,9 @@ when
       Answer(text == "SPAMMING FOLLOWERS WITH SPONSORED LINKS");
       )
       then
-      insert(new Result("WE'RE NOT CONVINCED YOU KNOW WHAT SOCAIL MEADIA IS"));
+      insert(new Result("WE'RE NOT CONVINCED YOU KNOW WHAT SOCIAL MEDIA IS"));
 end
-rule ".SWEET! YOUR'RE READY TO BUILD A SITE!"
+rule ".SWEET! YOU'RE READY TO BUILD A SITE!"
           when
           (or
     
@@ -400,7 +386,7 @@ rule ".SWEET! YOUR'RE READY TO BUILD A SITE!"
     Answer( text == "GET MENTIONED ON MASHABLE");
             )
           then
-    insert(new Result("SWEET! YOUR'RE READY TO BUILD A SITE!"));
+    insert(new Result("SWEET! YOU'RE READY TO BUILD A SITE!"));
       end
 
 rule ".YEAH. YOU'RE GONNA. NEED A DEVELOPER."
@@ -427,14 +413,14 @@ rule ".YOU LOOK GREAT! Go forth with your website, brave one!"
 
 
 
-rule "LETS START - OK - So you've got an Awesome Idea for a website?"
+rule "LET'S START - OK - So you've got an Awesome Idea for a website?"
     when
-          Answer( question.getText() == "LETS START" ,text == "OK")
+          Answer( question.getText() == "LET'S START" ,text == "OK")
     then
           ArrayList<String> variants = new ArrayList<>(Arrays.asList(new String[]{  "SURE DO!",  "NOPE." }));
           insert (new Question("So you've got an Awesome Idea for a website?",variants));
 end
-rule "WHAT KINDS OF SKILLS? - I HAVE GREAT IDEAS. - undefined"
+rule "WHAT KINDS OF SKILLS? - I HAVE GREAT IDEAS. - loop to start"
     when
           Answer(question.getText() == "WHAT KINDS OF SKILLS?" ,text == "I HAVE GREAT IDEAS.")
     then
@@ -449,7 +435,9 @@ rule "So you've got an Awesome Idea for a website? - NOPE. - NO IDEA. NO DICE."
 end
 rule "any near"
       when
-            Answer(question.getText() == "GREAT. WHAT'S YOURE IDEA OF GOOD DESIGN?",text != "CLEAR HIERARCHY BEAUTIFUL INTERACTIONS THROUGH STYLING")
+            Answer(question.getText() == "GREAT. WHAT'S YOUR IDEA OF GOOD DESIGN?",text != "CLEAR HIERARCHY BEAUTIFUL INTERACTIONS THROUGH STYLING")
       then
             insert(new Result("WE'RE NOT LETTING YOU ANYWHERE NEAR PHOTOSHOP."));
 end
+
+
