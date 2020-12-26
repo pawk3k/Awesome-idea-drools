@@ -14,7 +14,7 @@ public class Main {
         JOptionPane optionPane = new JOptionPane(getPanel(),
                 JOptionPane.PLAIN_MESSAGE, JOptionPane.DEFAULT_OPTION, null,
                 new Object[] {}, null);
-        dialog = optionPane.createDialog("import");
+        dialog = optionPane.createDialog("Question");
         dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         dialog.setVisible(true);
     }
@@ -25,7 +25,6 @@ public class Main {
         JLabel labele = new JLabel("");
         panel.add(label);
         panel.add(labele);
-//        JButton button1 = new JButton("EXIT1");
         for( int i = 0 ;i< variants.size(); i++){
             JButton button = new JButton(variants.get(i));
             int finalI = i;
@@ -47,11 +46,4 @@ public class Main {
     public int getResult() {
         return result;
     }
-
-//    public static void main(String[] args) {
-//        ArrayList<String> variants = new ArrayList<String>(Arrays.asList( new String[]{"Ohh","My"}));
-//        String title = "Title";
-//        Main o = new Main(variants, title);
-//        System.out.println(o.getResult());
-//    }
 }
